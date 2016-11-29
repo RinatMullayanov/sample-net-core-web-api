@@ -1,4 +1,4 @@
-﻿FROM microsoft/dotnet:latest
+﻿FROM microsoft/dotnet:1.0.1-sdk-projectjson
 
 # Create directory for the app source code
 RUN mkdir -p /usr/src/sampleWebApiNetCore
