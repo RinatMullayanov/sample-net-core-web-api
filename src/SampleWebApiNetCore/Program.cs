@@ -15,6 +15,8 @@ namespace SampleWebApiNetCore
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
+                // http://blog.scottlogic.com/2016/09/05/hosting-netcore-on-linux-with-docker.html
+                .UseUrls("http://*:5000") // listen on port 5000 on all network interfaces
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
