@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{150316EE-4E82-40F6-9499-F78D4165D0CE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6B420C77-02E5-4848-B1FF-E315C7BC429A}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "SampleWebApiNetCore", "src\SampleWebApiNetCore\SampleWebApiNetCore.xproj", "{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60C7637C-0C3E-43A9-A8C1-8F00B5167A2F} = {150316EE-4E82-40F6-9499-F78D4165D0CE}
+	EndGlobalSection
+EndGlobal
