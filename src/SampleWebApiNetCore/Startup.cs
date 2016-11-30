@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SampleWebApiNetCore.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SampleWebApiNetCore
 {
@@ -18,6 +20,8 @@ namespace SampleWebApiNetCore
                 .SetBasePath(env.ContentRootPath)
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+                .AddJsonFile("dbsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"dbsettings.{env.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables();
             Configuration = builder.Build();
         }
@@ -27,6 +31,11 @@ namespace SampleWebApiNetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Get connectionString from dbsettings.json
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // Add DataBaseContext like application service
+            services.AddDbContext<DataBaseContext>(options =>
+                options.UseNpgsql(connection));
             // Add framework services.
             services.AddMvc();
         }
