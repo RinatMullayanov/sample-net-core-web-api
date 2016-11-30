@@ -31,9 +31,9 @@ namespace SampleWebApiNetCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // get connectionString from dbsettings.json
+            // Get connectionString from dbsettings.json
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            // add DataBaseContext like application service
+            // Add DataBaseContext like application service
             services.AddDbContext<DataBaseContext>(options =>
                 options.UseNpgsql(connection));
             // Add framework services.
