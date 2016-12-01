@@ -55,13 +55,12 @@ namespace SampleWebApiNetCore.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var well = wellRep.Find(id);
+            var well = wellRep.Remove(id);
             if (well == null)
             {
                 return NotFound();
             }
 
-            wellRep.Remove(id);
             // better OkResult() instead of new NoContentResult()
             return Ok();
         }

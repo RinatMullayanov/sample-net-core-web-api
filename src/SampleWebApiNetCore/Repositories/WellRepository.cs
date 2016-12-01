@@ -34,6 +34,11 @@ namespace SampleWebApiNetCore.Repositories
         public Well Remove(int id)
         {
             var well = Find(id);
+            if(well == null)
+            {
+                return null;
+            }
+
             db.Wells.Remove(well);
             db.SaveChanges();
             return well;
