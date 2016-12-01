@@ -1,9 +1,10 @@
 ## Sample ASP.NET Core Web API application
 Based on 
 - [More about .NET Core](https://www.microsoft.com/net/core/platform)
+- [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/)
+- [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
 - [HOSTING .NET CORE ON LINUX WITH DOCKER - A NOOB'S GUIDE](http://blog.scottlogic.com/2016/09/05/hosting-netcore-on-linux-with-docker.html)
 - [Microsoft/dotnet docker image](https://hub.docker.com/r/microsoft/dotnet/)
-- [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/).
 
 ### Run a docker container:
 1. Clone or download this repository to local machine.

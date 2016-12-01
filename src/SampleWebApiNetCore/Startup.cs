@@ -39,7 +39,9 @@ namespace SampleWebApiNetCore
                 options.UseNpgsql(connection));
             // Add Repositories
             services.AddSingleton<IWellRepository, WellRepository>();
-            // Add framework services.
+            // Make lowercase routes URL
+            services.AddRouting(routeOptions => routeOptions.LowercaseUrls = true);
+            // Add framework services
             services.AddMvc();
         }
 

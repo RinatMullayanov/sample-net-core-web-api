@@ -26,7 +26,7 @@ namespace SampleWebApiNetCore.Controllers
         }
 
         // GET api/wells/1
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetById")]
         public IActionResult Get(int id)
         {
             var well = wellRep.Find(id);
@@ -48,7 +48,7 @@ namespace SampleWebApiNetCore.Controllers
             }
 
             wellRep.Add(well);
-            return new ObjectResult(well);
+            return CreatedAtRoute("GetById", new { id = well.Id }, well);
         }
 
         // PUT api/wells
