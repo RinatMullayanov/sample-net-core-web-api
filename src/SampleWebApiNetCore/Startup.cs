@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SampleWebApiNetCore.Models;
 using Microsoft.EntityFrameworkCore;
+using SampleWebApiNetCore.Repositories;
 
 namespace SampleWebApiNetCore
 {
@@ -36,7 +37,11 @@ namespace SampleWebApiNetCore
             // Add DataBaseContext like application service
             services.AddDbContext<DataBaseContext>(options =>
                 options.UseNpgsql(connection));
-            // Add framework services.
+            // Add Repositories
+            services.AddSingleton<IWellRepository, WellRepository>();
+            // Make lowercase routes URL
+            services.AddRouting(routeOptions => routeOptions.LowercaseUrls = true);
+            // Add framework services
             services.AddMvc();
         }
 
