@@ -51,6 +51,21 @@ namespace SampleWebApiNetCore.Controllers
             return new ObjectResult(well);
         }
 
+        // PUT api/wells
+        [HttpPut("{id}")]
+        public IActionResult Put(int id, [FromBody] Well well)
+        {
+            if (well == null || id != well.Id)
+            {
+                return BadRequest();
+            }
+
+            wellRep.Update(well);
+
+            // better OkResult() instead of new NoContentResult()
+            return Ok();
+        }
+
         // DELETE api/wells/1
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

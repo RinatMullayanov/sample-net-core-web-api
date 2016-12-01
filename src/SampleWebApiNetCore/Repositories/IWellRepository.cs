@@ -12,5 +12,6 @@ namespace SampleWebApiNetCore.Repositories
         Well Find(int id);
         void Add(Well well);
         Well Remove(int id);
+        void Update(Well well);
     }
 }

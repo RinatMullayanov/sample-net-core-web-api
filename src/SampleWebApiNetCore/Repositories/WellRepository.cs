@@ -43,5 +43,11 @@ namespace SampleWebApiNetCore.Repositories
             db.SaveChanges();
             return well;
         }
+
+        public void Update(Well well)
+        {
+            db.Wells.Update(well);
+            db.SaveChanges();
+        }
     }
 }
